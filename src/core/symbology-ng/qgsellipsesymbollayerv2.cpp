@@ -48,6 +48,7 @@ QgsEllipseSymbolLayerV2::~QgsEllipseSymbolLayerV2()
 
 QgsSymbolLayerV2* QgsEllipseSymbolLayerV2::create( const QgsStringMap& properties )
 {
+	QgsDebugMsg("In QgsEllipseSymbolLayerV2::create");
   QgsEllipseSymbolLayerV2* layer = new QgsEllipseSymbolLayerV2();
   if ( properties.contains( "symbol_name" ) )
   {
@@ -57,8 +58,10 @@ QgsSymbolLayerV2* QgsEllipseSymbolLayerV2::create( const QgsStringMap& propertie
   {
     layer->setSymbolWidth( properties["symbol_width"].toDouble() );
   }
+  QgsDebugMsg("Looking to see if setting height required");
   if ( properties.contains( "symbol_height" ) )
   {
+	  QgsDebugMsg("Setting height");
     layer->setSymbolHeight( properties["symbol_height"].toDouble() );
   }
   if ( properties.contains( "angle" ) )
@@ -174,7 +177,9 @@ QString QgsEllipseSymbolLayerV2::layerType() const
 
 void QgsEllipseSymbolLayerV2::startRender( QgsSymbolV2RenderContext& context )
 {
-  if ( !context.feature() || !hasDataDefinedProperty() )
+	  QgsDebugMsg("Julien: startRender elipse symbol");
+
+	if ( !context.feature() || !hasDataDefinedProperty() )
   {
     preparePath( mSymbolName, context );
   }
@@ -186,7 +191,8 @@ void QgsEllipseSymbolLayerV2::startRender( QgsSymbolV2RenderContext& context )
   const QgsVectorLayer* vlayer = context.layer();
   if ( vlayer )
   {
-    mWidthIndex = vlayer->fieldNameIndex( mWidthField );
+	  QgsDebugMsg("Julien: Resolving data defined attribute indices");
+	  mWidthIndex = vlayer->fieldNameIndex( mWidthField );
     mHeightIndex = vlayer->fieldNameIndex( mHeightField );
     mRotationIndex = vlayer->fieldNameIndex( mRotationField );
     mOutlineWidthIndex = vlayer->fieldNameIndex( mOutlineWidthField );

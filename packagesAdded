@@ -1,0 +1,6 @@
+cmake cmake-data doxygen flex graphviz grass grass-dev lacheck lesstif2 libblas3gf libdrm-dev libfcgi-dev libfcgi0ldbl libgdal1-1.6.0 libgdal1-dev libgeos-3.1.0 libgeos-c1
+  libgeos-dev libgfortran3 libgif-dev libgl1-mesa-dev libglu1-mesa-dev libgsl0-dev libhdf4-0-alt libhdf4-alt-dev libhdf5-serial-1.8.4 libhdf5-serial-dev liblapack3gf
+  libnetcdf-dev libnetcdf4 libodbcinstq1c2 libogdi3.2 libproj-dev libproj0 libqt3-mt libqt4-dev libqt4-multimedia libqt4-opengl-dev libqwt5-qt4 libqwt5-qt4-dev
+  libspatialindex-dev libspatialindex1 libspatialite-dev libspatialite2 libxerces-c2-dev libxerces-c28 lmodern luatex mesa-common-dev odbcinst odbcinst1debian1 proj-bin
+  proj-data pyqt4-dev-tools python-dev python-numpy python-qt4-dev python-sip-dev python2.6-dev qt4-qmake tex-common texlive-base texlive-binaries texlive-common
+  texlive-doc-base texlive-extra-utils texlive-luatex txt2tags unixodbc unixodbc-dev xvfb

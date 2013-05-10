@@ -484,6 +484,9 @@ void QgsLineSymbolV2::setWidth( double w )
 {
   double origWidth = width();
 
+  QgsDebugMsg("Julien: Setting width");
+
+
   for ( QgsSymbolLayerV2List::iterator it = mLayers.begin(); it != mLayers.end(); ++it )
   {
     QgsLineSymbolLayerV2* layer = ( QgsLineSymbolLayerV2* ) * it;
